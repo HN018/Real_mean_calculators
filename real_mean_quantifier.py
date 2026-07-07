@@ -115,7 +115,7 @@ def calculate_mean_intensity(csv_data: str) -> List[Dict[str, Union[str, float, 
 # --- Main Execution ---
 if __name__ == "__main__":
     # The file path provided by the user (using raw string notation r"" for Windows paths)
-    file_path = r"C:\Users\haoning.yang\Desktop\quant.csv"
+    file_path = r"C:\Users\------\Desktop\quant.csv"
 
     try:
         # Read the content of the user's CSV file
