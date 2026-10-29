@@ -1,11 +1,11 @@
-# Quantitative Microscopy: Automated Intensity Extraction
+# Real mean calculators for Analyze Particles in ImageJ
 
 ## Overview
 This repository contains Python data processing pipelines designed to automate the extraction and quantification of fluorescence microscopy data. 
 
 When analyzing subcellular compartments (e.g., lysosomes, lipid droplets), image analysis software (like ImageJ) often outputs data for hundreds of individual segmented puncta per cell. To perform rigorous statistical analysis at the cellular level, these individual data points must be aggregated correctly. This repository provides scripts to automate that aggregation, transitioning raw `.csv` exports into structured, reproducible datasets.
 
-## The Biological Problem: The "Average of Averages" Fallacy
+## The ImageJ Summary Problem: The "Average of Averages" Fallacy
 A common error in microscopy quantification is simply averaging the mean intensity of all segmented organelles in a cell. This incorrectly weights a 2-pixel artifact the same as a 200-pixel organelle. When performing analyze particles function, ImageJ provides such "Average of Averages" mean value on the "summary" tab, which should not be taken as the correct mean fluorescence value per cell.
 
 To determine the true cellular fluorescence mean, the data must be weighted by area of individual particles. When particle sizes are variable, the ImageJ mean value deviates significantly from weignhted true mean value. The scripts in this repository calculate the true **Weighted Mean Intensity** using the formula:
